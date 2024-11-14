@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane fx:id="rootNode" prefHeight="467.0" prefWidth="566.0" style="-fx-background-color: e9ecef;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="25.0" layoutY="52.0" prefHeight="243.0" prefWidth="491.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color></DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="531.0" layoutY="52.0" prefHeight="243.0" prefWidth="214.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color></DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="25.0" layoutY="313.0" prefHeight="199.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="253.0" layoutY="313.0" prefHeight="199.0" prefWidth="210.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <AnchorPane layoutX="478.0" layoutY="313.0" prefHeight="199.0" prefWidth="265.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </AnchorPane>
+            <TextField layoutX="341.0" layoutY="12.0" prefHeight="25.0" prefWidth="211.0" promptText="search something" style="-fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: WHITE;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <Circle fill="WHITE" layoutX="729.0" layoutY="25.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+            <Text fill="#4c4c4c" layoutX="648.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="#949393" layoutX="648.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200327911636">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+            <JFXButton buttonType="RAISED" layoutX="559.0" layoutY="12.0" onAction="#btnSearchOnAction" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Search">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <Text layoutX="25.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="16.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="180.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="47.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HARVARD" textAlignment="CENTER" wrappingWidth="87.62435913085938">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="37.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inspire love for learning">
+               <font>
+                  <Font name="Britannic Bold" size="10.0" />
+               </font>
+            </Text>
+            <VBox layoutX="41.0" layoutY="95.0" prefHeight="200.0" prefWidth="100.0" spacing="16.0">
+               <children>
+                  <JFXButton alignment="TOP_LEFT" lineSpacing="8.0" onAction="#btnUserOnAction" prefHeight="25.0" prefWidth="100.0" text="User">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USER" />
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" lineSpacing="11.0" onAction="#btnCoursesOnAction" prefHeight="25.0" prefWidth="100.0" text="Courses">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BOOK" />
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="10.0" layoutY="35.0" lineSpacing="11.0" onAction="#btnStudentOnAction" prefHeight="25.0" prefWidth="100.0" text="Student">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CHILD" />
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="10.0" layoutY="61.0" lineSpacing="11.0" onAction="#btnPaymentOnAction" prefHeight="25.0" prefWidth="100.0" text="Payment">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="DOLLAR" />
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="15.0" />
+                     </font></JFXButton>
+                  <JFXButton alignment="TOP_LEFT" layoutX="10.0" layoutY="134.0" lineSpacing="11.0" onAction="#btnHistoryOnAction" prefHeight="25.0" prefWidth="100.0" text="History" textFill="#0b0b0b">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="HISTORY" />
+                     </graphic>
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

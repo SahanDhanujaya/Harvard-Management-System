@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="426.0" prefWidth="686.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.WelcomePageController">
+   <children>
+      <ImageView fitHeight="426.0" fitWidth="697.0" opacity="0.43">
+         <image>
+            <Image url="@../assets/images/698172-2560x1369-desktop-hd-harvard-university-background.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="99.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO HARVARD UNIVERCITY" textAlignment="CENTER" wrappingWidth="498.14227294921875">
+         <font>
+            <Font name="Bodoni MT" size="29.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
