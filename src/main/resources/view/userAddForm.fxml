@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.ImageView?>
@@ -68,15 +69,6 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <TextField fx:id="txtDob" layoutX="42.0" layoutY="211.0" onAction="#txtDobOnAction" promptText="DOB" style="-fx-background-color: white; -fx-border-radius: 5; -fx-background-radius: 5;">
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color opacity="0.2199999988079071" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
             <JFXCheckBox fx:id="checkMale" layoutX="42.0" layoutY="252.0" text="Male" />
             <JFXCheckBox fx:id="checkFemale" layoutX="102.0" layoutY="252.0" text="Female" />
             <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="42.0" layoutY="363.0" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="86.0" style="-fx-background-color: lightgreen;" text="Save" />
@@ -99,6 +91,15 @@
                </children>
             </AnchorPane>
             <JFXButton fx:id="btnAddUser" buttonType="RAISED" layoutX="216.0" layoutY="211.0" onAction="#btnAddUserOnAction" prefHeight="25.0" prefWidth="79.0" style="-fx-background-color: lightblue;" text="Add Profile" />
+            <DatePicker fx:id="txtDob" layoutX="42.0" layoutY="211.0" onAction="#txtDobOnAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </DatePicker>
          </children>
       </AnchorPane>
       <Button layoutX="383.0" layoutY="1.0" mnemonicParsing="false" onAction="#btnCloseOnAction" style="-fx-background-color: none;">

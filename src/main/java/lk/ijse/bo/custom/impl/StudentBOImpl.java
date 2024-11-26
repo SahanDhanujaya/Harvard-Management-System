@@ -1,4 +1,7 @@
 package lk.ijse.bo.custom.impl;
 
-public class StudentBOImpl {
+import lk.ijse.bo.SuperBO;
+import lk.ijse.bo.custom.StudentBO;
+
+public class StudentBOImpl implements StudentBO {
 }

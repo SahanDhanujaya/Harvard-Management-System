@@ -1,38 +1,38 @@
 package lk.ijse.dao.custom.impl;
 
-import lk.ijse.dao.custom.StudentDAO;
-import lk.ijse.entity.Student;
+import lk.ijse.dao.custom.PaymentDAO;
+import lk.ijse.entity.Payment;
 
 import java.util.List;
 
-public class StudentDAOImpl implements StudentDAO {
+public class PaymentDAOImpl implements PaymentDAO {
     @Override
     public String getCurrentId() {
         return "";
     }
 
     @Override
-    public boolean save(Student obj) {
+    public boolean save(Payment obj) {
         return false;
     }
 
     @Override
-    public boolean update(Student obj) {
+    public boolean update(Payment obj) {
         return false;
     }
 
     @Override
-    public boolean delete(Student obj) {
+    public boolean delete(Payment obj) {
         return false;
     }
 
     @Override
-    public Student getObj(String... x) {
+    public Payment getObj(String... x) {
         return null;
     }
 
     @Override
-    public List<Student> getObjList() {
+    public List<Payment> getObjList() {
         return List.of();
     }
 }

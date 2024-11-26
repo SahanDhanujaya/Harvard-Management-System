@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.Controller.CourseEditFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane fx:id="rootNode" prefHeight="534.0" prefWidth="766.0" style="-fx-background-color: e9ecef;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CourseEditFormController">
+   <children>
+      <TextField fx:id="txtSearch" layoutX="341.0" layoutY="12.0" onAction="#txtSearchOnAction" prefHeight="25.0" prefWidth="211.0" promptText="search something" style="-fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: WHITE;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Circle fill="WHITE" layoutX="729.0" layoutY="25.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fill="#4c4c4c" layoutX="648.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#949393" layoutX="648.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200327911636">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnSearchOnAction" buttonType="RAISED" layoutX="559.0" layoutY="12.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Search">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </JFXButton>
+      <Button fx:id="btnBack" accessibleText="Home" layoutX="23.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnBackOnAction" prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: white; -fx-background-radius: 100000;">
+         <graphic>
+            <ImageView accessibleText="Home" fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons/icons8-back-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
+      <TableView layoutX="33.0" layoutY="277.0" prefHeight="241.0" prefWidth="699.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+        <columns>
+          <TableColumn fx:id="clmCourse" prefWidth="208.66665267944336" text="Course" />
+          <TableColumn fx:id="clmDuration" prefWidth="230.0000457763672" text="Duration" />
+            <TableColumn fx:id="clmPrice" prefWidth="264.0000305175781" text="Price" />
+        </columns>
+      </TableView>
+      <AnchorPane layoutX="33.0" layoutY="57.0" prefHeight="205.0" prefWidth="699.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <TextField fx:id="txtCourse" layoutX="105.0" layoutY="68.0" onAction="#txtCourseOnAction" promptText="course" />
+            <TextField fx:id="txtDuration" layoutX="275.0" layoutY="68.0" onAction="#txtDurationOnAction" promptText="duration" />
+            <TextField fx:id="txtPrice" layoutX="445.0" layoutY="68.0" onAction="#txtPriceOnAction" promptText="price" />
+            <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="105.0" layoutY="111.0" onAction="#btnBtnOnAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: lightgreen;" text="Update" />
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="173.0" layoutY="111.0" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: tomato;" text="Delete" />
+            <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="243.0" layoutY="111.0" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: lightgray;" text="Clear" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

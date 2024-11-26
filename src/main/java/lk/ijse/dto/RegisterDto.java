@@ -4,14 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CourseDto {
+public class RegisterDto {
+    private String studentId;
     private String courseId;
-    private String course;
-    private String duration;
-    private String description;
-    private double fee;
-    private String profilePicture;
+    private Date date;
 }

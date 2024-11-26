@@ -66,7 +66,7 @@
             </DropShadow>
          </effect>
          <children>
-            <ImageView fitHeight="151.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="coursePic" fitHeight="151.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
       <JFXButton fx:id="btnSave" buttonType="RAISED" layoutX="233.0" layoutY="389.0" onAction="#btnSaveOnAction" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: lightgreen;" text="Save" />
