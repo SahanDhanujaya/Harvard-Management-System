@@ -1,6 +1,5 @@
 package lk.ijse.dto;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +12,10 @@ public class PaymentDto {
     private String paymentId;
     private String method;
     private double upFrontPayment;
-    private Date date;
+    private String upFrontdate;
+    private double secondPayment;
+    private String secondPaymentDate;
+    private double thirdPayment;
+    private String thirdPaymentDate;
     private String studentId;
 }

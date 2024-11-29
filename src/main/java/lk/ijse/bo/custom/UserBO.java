@@ -12,4 +12,5 @@ public interface UserBO extends SuperBO {
     public boolean deleteUser(UserDto obj);
     public UserDto getUserObj(String ...x);
     public List<UserDto> getUserObjList();
+    List<String> generateUserPassword();
 }

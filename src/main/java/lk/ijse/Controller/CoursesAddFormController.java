@@ -2,6 +2,7 @@ package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -50,7 +51,12 @@ public class CoursesAddFormController {
     public void btnSaveOnAction(ActionEvent actionEvent) {
         String availableId = getAvailableCourseId();
         String path = btnAddProfileOnAction(actionEvent);
-        courseBO.saveCourse(new CourseDto(availableId,txtCourse.getText(),txtDuration.getText(),txtDescription.getText(),Double.parseDouble(txtPrice.getText()),path));
+        boolean isSaved = courseBO.saveCourse(new CourseDto(availableId, txtCourse.getText(), txtDuration.getText(), txtDescription.getText(), Double.parseDouble(txtPrice.getText()), path));
+        if (isSaved) {
+           new Alert(Alert.AlertType.CONFIRMATION,"Course saved successfully!").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR,"Course save unsuccessfully").show();
+        }
 
     }
 
@@ -65,6 +71,11 @@ public class CoursesAddFormController {
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
+        txtCourse.clear();
+        txtDuration.clear();
+        txtPrice.clear();
+        txtDescription.clear();
+        coursePic.setImage(null);
     }
 
     public void btnCloseOnAction(ActionEvent actionEvent) {

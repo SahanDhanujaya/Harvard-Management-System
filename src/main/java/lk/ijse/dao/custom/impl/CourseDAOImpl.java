@@ -5,6 +5,7 @@ import lk.ijse.dao.custom.CourseDAO;
 import lk.ijse.entity.Course;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -43,21 +44,64 @@ public class CourseDAOImpl implements CourseDAO {
 
     @Override
     public boolean update(Course obj) {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        try {
+            session.update(obj.getCourseId(), obj);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public boolean delete(Course obj) {
-        return false;
+       Session session = FactoryConfiguration.getInstance().getSession();
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.delete(obj);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public Course getObj(String... x) {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        try {
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM Course c WHERE c.course = :course");
+            transaction.commit();
+            query.setParameter("course", x[0]);
+            return (Course) query.uniqueResult();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            session.close();
+        }
     }
 
     @Override
     public List<Course> getObjList() {
-        return List.of();
+        Session session = FactoryConfiguration.getInstance().getSession();
+        try {
+            Transaction transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM Course");
+            transaction.commit();
+            List<Course> resultList = query.getResultList();
+            return resultList;
+        }catch(Exception e) {
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
+    return null;
     }
 }

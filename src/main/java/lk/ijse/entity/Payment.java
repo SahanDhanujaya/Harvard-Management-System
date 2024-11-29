@@ -17,7 +17,12 @@ public class Payment {
     private String paymentId;
     private String method;
     private double upFrontPayment;
-    private Date date;
+    private String upFrontdate;
+    private double secondPayment;
+    private String secondPaymentDate;
+    private double thirdPayment;
+    private String thirdPaymentDate;
+    private String stId;
     @OneToMany(mappedBy = "payment", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY )
     private List<Registration> registrationList;
     @ManyToOne

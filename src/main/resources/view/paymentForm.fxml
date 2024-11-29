@@ -1,14 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.Controller.PaymentFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="534.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.PaymentFormController">
+   <children>
+      <TextField fx:id="txtSearch" layoutX="291.0" layoutY="12.0" onAction="#txtSearchOnAction" prefHeight="25.0" prefWidth="211.0" promptText="search something" style="-fx-border-radius: 10; -fx-background-radius: 10; -fx-background-color: WHITE;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Circle fx:id="userProfile" fill="WHITE" layoutX="729.0" layoutY="25.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="lblUser" fill="#4c4c4c" layoutX="608.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblId" fill="#949393" layoutX="608.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200327911636">
+         <font>
+            <Font size="9.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="509.0" layoutY="12.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;" text="Search">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font size="10.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="25.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="16.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="31.0" layoutY="70.0" prefHeight="207.0" prefWidth="711.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10;">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+         <children>
+            <TextField fx:id="txtStudentId" layoutX="40.0" layoutY="32.0" onAction="#txtStudentIdOnAction" prefHeight="25.0" prefWidth="175.0" promptText="student id" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtStudentName" layoutX="241.0" layoutY="32.0" onAction="#txtStudentNameOnAction" prefHeight="25.0" prefWidth="175.0" promptText="student name" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <ScrollPane fx:id="scrollPane" layoutX="443.0" layoutY="32.0" prefHeight="143.0" prefWidth="228.0">
+              <content>
+                <AnchorPane fx:id="scrollAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="142.0" prefWidth="208.0" style="-fx-background-color: white;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.2199999988079071" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <TextField fx:id="txtCourse" layoutX="40.0" layoutY="72.0" onAction="#txtCourseOnAction" prefHeight="25.0" prefWidth="175.0" promptText="course" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <TextField fx:id="txtPaymentId" layoutX="240.0" layoutY="72.0" onAction="#txtPaymentIdOnAction" prefHeight="25.0" prefWidth="175.0" promptText="payment" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </TextField>
+            <DatePicker fx:id="txtDate" layoutX="40.0" layoutY="110.0" onAction="#txtDateOnAction" prefHeight="25.0" prefWidth="175.0" promptText="date" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </DatePicker>
+            <JFXButton buttonType="RAISED" layoutX="40.0" layoutY="149.0" onAction="#btnPayOnAction" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: lightgreen;" text="Pay" />
+            <JFXButton buttonType="RAISED" layoutX="98.0" layoutY="149.0" onAction="#btnClearOnAction" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: lightgray;" text="Clear" />
+            <JFXButton buttonType="RAISED" layoutX="157.0" layoutY="149.0" onAction="#btnCartOnAction" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: lightblue;" text="Cart" />
+            <ComboBox fx:id="cmbPayment" layoutX="241.0" layoutY="110.0" onAction="#cmbPaymentOnAction" prefHeight="25.0" prefWidth="175.0" promptText="Payment Method" style="-fx-background-color: white;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.2199999988079071" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </ComboBox>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tblPayment" layoutX="31.0" layoutY="296.0" prefHeight="207.0" prefWidth="711.0" style="-fx-background-color: white; -fx-border-radius: 10; -fx-background-radius: 10;">
+        <columns>
+          <TableColumn fx:id="clmStudentId" prefWidth="110.66664505004883" text="Student ID" />
+          <TableColumn fx:id="clmStudent" prefWidth="153.3332977294922" text="Student" />
+            <TableColumn fx:id="clmFirstPayment" prefWidth="165.33334350585938" text="First Payment" />
+            <TableColumn fx:id="clmSecondPayment" minWidth="0.0" prefWidth="138.66671752929688" text="Second Payment" />
+            <TableColumn fx:id="clmThirdPayement" minWidth="0.0" prefWidth="138.66671752929688" text="Third Payment" />
+        </columns>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.2199999988079071" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TableView>
+   </children>
 </AnchorPane>

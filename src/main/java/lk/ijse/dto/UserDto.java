@@ -19,5 +19,7 @@ public class UserDto {
     private Date dob;
     private String gender;
     private String address;
+    private String userType;
+    private String password;
 //    private Blob picture;
 }

@@ -1,5 +1,7 @@
 package lk.ijse.dao;
 
+import org.hibernate.Session;
+
 import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO {

@@ -18,12 +18,15 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private double upfrontPayment;
+    private String studentId;
+    private String courseId;
+    private String date;
+    private String paymentId;
     @ManyToOne
     private Student student;
     @ManyToOne
     private Course course;
     @ManyToOne
     private Payment payment;
-    private Date date;
+
 }

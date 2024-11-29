@@ -12,5 +12,6 @@ import java.sql.Date;
 public class RegisterDto {
     private String studentId;
     private String courseId;
-    private Date date;
+    private String date;
+    private String paymentId;
 }

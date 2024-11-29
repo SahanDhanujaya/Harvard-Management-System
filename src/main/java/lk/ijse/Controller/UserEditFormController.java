@@ -4,13 +4,11 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.bo.BOFactory;
+import lk.ijse.bo.custom.UserBO;
+import lk.ijse.dto.UserDto;
 
 import java.io.IOException;
 
@@ -62,6 +60,8 @@ public class UserEditFormController {
     @FXML
     private TextField txtSearch;
 
+    UserBO userBO = (UserBO) BOFactory.getBoFactory().getInstance(BOFactory.BoType.USER);
+
     @FXML
     void btnBackOnAction(ActionEvent event) {
         this.rootNode.getChildren().clear();
@@ -74,22 +74,50 @@ public class UserEditFormController {
 
     @FXML
     void btnClearOnAction(ActionEvent event) {
+        txtFirstName.clear();
+        txtLastName.clear();
+        txtEmail.clear();
+        txtContact.clear();
+        txtAddress.clear();
+        dateDob.setValue(null);
 
     }
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
-
+        String text = txtSearch.getText();
+        UserDto userObj = userBO.getUserObj(text);
+        boolean isDeleted = userBO.deleteUser(userObj);
+        if (isDeleted){
+            new Alert(Alert.AlertType.CONFIRMATION,"User deleted successfully").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR,"User deleted unsuccessfully").show();
+        }
     }
 
     @FXML
     void btnSearchOnAction(ActionEvent event) {
+        String text = txtSearch.getText();
+        UserDto userObj = userBO.getUserObj(text);
+        txtFirstName.setText(userObj.getFirstName());
+        txtLastName.setText(userObj.getLastName());
+        txtAddress.setText(userObj.getAddress());
+        txtContact.setText(userObj.getContact());
+        txtEmail.setText(userObj.getEmail());
+        dateDob.setValue(userObj.getDob().toLocalDate());
 
     }
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
-
+        String text = txtSearch.getText();
+        UserDto userObj = userBO.getUserObj(text);
+        boolean isUpdated = userBO.updateUser(userObj);
+        if (isUpdated){
+            new Alert(Alert.AlertType.CONFIRMATION,"User updated successfully").show();
+        } else {
+            new Alert(Alert.AlertType.ERROR,"User updated unsuccessfully").show();
+        }
     }
 
     @FXML

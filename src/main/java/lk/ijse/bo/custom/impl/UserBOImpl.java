@@ -8,6 +8,7 @@ import lk.ijse.entity.User;
 
 import java.util.List;
 
+
 public class UserBOImpl implements UserBO {
     UserDAO userDAO = (UserDAO) DAOFactory.getDaoFactory().getInstance(DAOFactory.DaoType.USER);
     @Override
@@ -17,26 +18,32 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean saveUser(UserDto obj) {
-        return userDAO.save(new User(obj.getUserId(), obj.getFirstName(), obj.getLastName(), obj.getContact(), obj.getEmail(), obj.getDob(), obj.getGender(), obj.getAddress(),null));
+        return userDAO.save(new User(obj.getUserId(), obj.getFirstName(), obj.getLastName(), obj.getContact(), obj.getEmail(), obj.getDob(), obj.getGender(), obj.getAddress(), obj.getUserType(), obj.getPassword(), null));
     }
 
     @Override
     public boolean updateUser(UserDto obj) {
-        return false;
+        return userDAO.update(new User(obj.getUserId(), obj.getFirstName(), obj.getLastName(), obj.getContact(), obj.getEmail(), obj.getDob(), obj.getGender(), obj.getAddress(), obj.getUserType(), obj.getPassword(), null));
     }
 
     @Override
     public boolean deleteUser(UserDto obj) {
-        return false;
+        return userDAO.delete(new User(obj.getUserId(), obj.getFirstName(), obj.getLastName(), obj.getContact(), obj.getEmail(), obj.getDob(), obj.getGender(), obj.getAddress(), obj.getUserType(), obj.getPassword() ,null));
     }
 
     @Override
     public UserDto getUserObj(String... x) {
-        return null;
+        User obj = userDAO.getObj(x[0]);
+        return new UserDto(obj.getUserId(), obj.getFirstName(), obj.getLastName(), obj.getContact(), obj.getEmail(), obj.getDob(), obj.getGender(),obj.getAddress(), obj.getUserType(), obj.getPassword());
     }
 
     @Override
     public List<UserDto> getUserObjList() {
         return List.of();
+    }
+
+    @Override
+    public List<String> generateUserPassword() {
+        return userDAO.generatePassword();
     }
 }

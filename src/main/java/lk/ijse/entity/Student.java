@@ -15,11 +15,13 @@ import java.util.List;
 public class Student {
     @Id
     private String studentId;
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private String address;
     private String mobile;
     private String email;
-    private Date dob;
+    private String dob;
+    private String course;
     @ManyToOne
     private User user;
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY )
